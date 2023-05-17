@@ -1,1 +1,2 @@
-# configs
+# configCloud
+configurações Servidor
