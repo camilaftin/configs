@@ -1,4 +1,7 @@
 server:
   port: 8083
+  
+ message: "Bem-vindo à minha API! Acesse {{url}} para obter mais informações."
+
 
 
