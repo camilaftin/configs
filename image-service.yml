@@ -1,1 +1,5 @@
-message: URL da imagem
+server:
+  port: 8083
+storage:
+  url: http://storage-repo.com/{nome_image}
+
