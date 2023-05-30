@@ -10,6 +10,10 @@ spring:
           uri: lb://SUBSCRIPTION-SERVICE
           predicates:
             - Path=/subscription/**
+        - id: movieRoute
+          uri: lb://MOVIE-SERVICE
+          predicates:
+            - Path=/movies/**
         - id: courseRoute
           uri: lb://COURSE-SERVICE
           predicates:
