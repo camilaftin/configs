@@ -6,6 +6,14 @@ spring:
       default-filters:
         - name: LogFilter
       routes:
+        - id: specieRoute
+          uri: lb://SPECIE-SERVICE
+          predicates:
+            - Path=/specie/**
+        - id: animalRoute
+          uri: lb://ANIMAL-SERVICE
+          predicates:
+            - Path=/animal/**
         - id: subscriptionRoute
           uri: lb://SUBSCRIPTION-SERVICE
           predicates:
