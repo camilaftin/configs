@@ -3,7 +3,7 @@ server:
 spring:
   security:
     oauth2:
-      resourceserver:
+      resource-server:
         jwt:
           issue-uri: https://accounts.google.com
           jwk-set-uri: htpps://www.googleapis.com/oauth2/v3/certs
