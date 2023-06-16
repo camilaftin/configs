@@ -8,7 +8,7 @@ spring:
           issuer-uri: https://accounts.google.com
           jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
       client:
-        registration:
+        registration: 
           google:
             client-id: 427086570953-mnmnqfohu311judp10ovl0v1p1576nri.apps.googleusercontent.com
             client-secret: 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
