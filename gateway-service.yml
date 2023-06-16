@@ -3,7 +3,7 @@ server:
 spring:
   security:
     oauth2:
-      resource-server:
+      resourceserver:
         jwt:
           issue-uri: https://accounts.google.com
           jwk-set-uri: htpps://www.googleapis.com/oauth2/v3/certs
@@ -12,7 +12,8 @@ spring:
             google:
               clientId: 427086570953-mnmnqfohu311judp10ovl0v1p1576nri.apps.googleusercontent.com
               clientSecret: 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
-              scope: openid
+               scope:
+                 - openid
               redirect-uri: http://localhost:8080/login/oauth2/code/google
   cloud:
     gateway:
