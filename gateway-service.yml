@@ -17,6 +17,7 @@ spring:
   cloud:
     gateway:
       default-filters:
+        - TokenRelay
         - name: LogFilter
       routes:
         - id: specieRoute
