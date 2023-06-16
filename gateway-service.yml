@@ -8,17 +8,17 @@ spring:
           issuer-uri: https://accounts.google.com
           jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
       client:
-        registration: 
+        registration:
           google:
             client-id: 427086570953-mnmnqfohu311judp10ovl0v1p1576nri.apps.googleusercontent.com
             client-secret: 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
-            scope: openid, email
-            redirect-uri: 'http://localhost:8080/login/oauth2/code/google'
+            scope: openid
+            redirect-uri: http://localhost:8080/login/oauth2/code/google        
   cloud:
     gateway:
       default-filters:
         - TokenRelay
-        - name: LogFilter
+#        - name: LogFilter
       routes:
         - id: specieRoute
           uri: lb://SPECIE-SERVICE
