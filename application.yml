@@ -36,3 +36,9 @@ resilience4j:
         waitDurationInOpenState: 50s
         permittedNumberOfCalssInHalfOpenState: 2
         automaticTransitionFromOpenToHalfIfOpenEnabled: true
+
+retry:
+    instances:
+      movie-service:
+        maxAttempts: 3
+        waitDuration: 1s
