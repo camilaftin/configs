@@ -12,7 +12,10 @@ spring:
           google:
             client-id: 427086570953-mnmnqfohu311judp10ovl0v1p1576nri.apps.googleusercontent.com
             client-secret: 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
-            scope: openid
+            scope: 
+              - openid
+              - profile
+              - email
             redirect-uri: http://localhost:8080/login/oauth2/code/google     
   cloud:
     gateway:
