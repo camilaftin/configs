@@ -1,52 +1,66 @@
+# server:
+#   port: 8080
+# spring:
+#   # security:
+#   #   oauth2:
+#   #     resourceserver:
+#   #       jwt:
+#   #         issuer-uri: https://accounts.google.com
+#   #         jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+#   #     client:
+#   #       registration:
+#   #         google:
+#   #           client-id: 427086570953-mnmnqfohu311judp10ovl0v1p1576nri.apps.googleusercontent.com
+#   #           client-secret: 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
+#   #           scope: 
+#   #             - openid
+#   #             - profile
+#   #             - email
+#   #           redirect-uri: http://localhost:8080/login/oauth2/code/google     
+#   cloud:
+#     gateway:
+#       default-filters:
+#         - TokenRelay
+# #        - name: LogFilter
+#       routes:
+#         - id: specieRoute
+#           uri: lb://SPECIE-SERVICE
+#           predicates:
+#             - Path=/specie/**
+#         - id: animalRoute
+#           uri: lb://ANIMAL-SERVICE
+#           predicates:
+#             - Path=/animal/**
+#         - id: subscriptionRoute
+#           uri: lb://SUBSCRIPTION-SERVICE
+#           predicates:
+#             - Path=/subscription/**
+#         - id: movieRoute
+#           uri: lb://MOVIE-SERVICE
+#           predicates:
+#             - Path=/movies/**
+#         - id: courseRoute
+#           uri: lb://COURSE-SERVICE
+#           predicates:
+#             - Path=/course/**
+#         - id: catalogRoute
+#           uri: lb://CATALOG-SERVICE
+#           predicates:
+#             - Path=/catalog/**
+#           filters:
+#             - AddRequestHeader=course-request-header, custom-course-request-header
+#             - AddResponseHeader=course-response-header, custom-course-response-header
 server:
   port: 8080
 spring:
-  # security:
-  #   oauth2:
-  #     resourceserver:
-  #       jwt:
-  #         issuer-uri: https://accounts.google.com
-  #         jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
-  #     client:
-  #       registration:
-  #         google:
-  #           client-id: 427086570953-mnmnqfohu311judp10ovl0v1p1576nri.apps.googleusercontent.com
-  #           client-secret: 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
-  #           scope: 
-  #             - openid
-  #             - profile
-  #             - email
-  #           redirect-uri: http://localhost:8080/login/oauth2/code/google     
   cloud:
     gateway:
-      default-filters:
-        - TokenRelay
-#        - name: LogFilter
       routes:
-        - id: specieRoute
-          uri: lb://SPECIE-SERVICE
-          predicates:
-            - Path=/specie/**
-        - id: animalRoute
-          uri: lb://ANIMAL-SERVICE
-          predicates:
-            - Path=/animal/**
-        - id: subscriptionRoute
-          uri: lb://SUBSCRIPTION-SERVICE
-          predicates:
-            - Path=/subscription/**
-        - id: movieRoute
-          uri: lb://MOVIE-SERVICE
-          predicates:
-            - Path=/movies/**
-        - id: courseRoute
-          uri: lb://COURSE-SERVICE
-          predicates:
-            - Path=/course/**
         - id: catalogRoute
           uri: lb://CATALOG-SERVICE
           predicates:
             - Path=/catalog/**
-          filters:
-            - AddRequestHeader=course-request-header, custom-course-request-header
-            - AddResponseHeader=course-response-header, custom-course-response-header
+       - id: movieRoute
+          uri: lb://MOVIE-SERVICE
+          predicates:
+            - Path=/movies/**
