@@ -55,12 +55,14 @@ server:
 spring:
   cloud:
     gateway:
+      default-filters:
+        - name: LogFilter
       routes:
         - id: catalogRoute
           uri: lb://CATALOG-SERVICE
           predicates:
             - Path=/catalog/**
-       - id: movieRoute
+        - id: movieRoute
           uri: lb://MOVIE-SERVICE
           predicates:
-            - Path=/movies/**
+            - Path=/movie/**
