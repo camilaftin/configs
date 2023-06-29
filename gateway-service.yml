@@ -51,12 +51,10 @@
 #             - AddRequestHeader=course-request-header, custom-course-request-header
 #             - AddResponseHeader=course-response-header, custom-course-response-header
 server:
-  port: 8080
+  port: ${PORT:8080}
 spring:
   cloud:
     gateway:
-      default-filters:
-        - name: LogFilter
       routes:
         - id: catalogRoute
           uri: lb://CATALOG-SERVICE
@@ -66,3 +64,7 @@ spring:
           uri: lb://MOVIE-SERVICE
           predicates:
             - Path=/movie/**
+        - id: serieRoute
+          uri: lb://SERIE-SERVICE
+          predicates:
+            - Path=/serie/**
